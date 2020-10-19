@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Icon } from 'semantic-ui-react';
+import Navbar from './Navbar';
+import NavItem from './NavItem';
+import DropdownMenu from './DropdownMenu';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar>
+      <NavItem icon={<Icon className="icon" name="home"/>}/>
+      <NavItem icon={<Icon className="icon" name="gamepad"/>}/>
+      <NavItem icon={<Icon className="icon" name="file"/>}/>
+    
+      <NavItem icon={<Icon className="icon" name="angle down"/>}>
+        {/* DropDown in here*/}
+        <DropdownMenu></DropdownMenu>
+
+      </NavItem>
+    
+    </Navbar>
   );
 }
 
